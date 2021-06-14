@@ -19,12 +19,10 @@ inputRef.addEventListener('blur', e => {
     
     if (value.length !== Number(dataLengthAttribute)) {
         e.currentTarget.classList.add('invalid');
-    } else {
-        if (e.currentTarget.classList.contains('invalid')) {
+        e.currentTarget.classList.remove('valid');
+    }
+    if (value.length === Number(dataLengthAttribute)) {
         e.currentTarget.classList.replace('invalid', 'valid');
-    }};
+    };
 });
-
-
-
 

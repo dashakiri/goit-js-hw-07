@@ -13,16 +13,19 @@ const decrementBtn = document.querySelector('[data-action="decrement"]');
 
 let counterValue = 0;
 
-incrementBtn.addEventListener('click', () => value.innerHTML = counterValue += 1);
+incrementBtn.addEventListener('click', increaseInputValue);
 
-decrementBtn.addEventListener('click', () => {
-    if (value.innerHTML > 0) {
+decrementBtn.addEventListener('click', decreaseInputValue);
+
+function increaseInputValue() {
+    value.textContent = counterValue += 1;
+}
+
+function decreaseInputValue() {
+     if (value.innerHTML > 0) {
         value.innerHTML = counterValue -= 1;
     }; 
-});
-
-
-
+}
 
 
 

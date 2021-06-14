@@ -4,8 +4,6 @@
 // элементов в input и нажимает кнопку Создать, после чего рендерится коллекция.При нажатии
 // на кнопку Очистить, коллекция элементов очищается.
 
-
-
 const controlsDivRef = document.querySelector('#controls');
 const boxesDivRef = document.querySelector('#boxes');
 const inputRef = document.querySelector('input');
@@ -32,7 +30,9 @@ function createBoxes() {
 
     boxesDivRef.append(...boxes);
 
+    inputRef.value = '';
 };
+
 
 function makeRandomColor() {
     const random = (min, max) => Math.round(Math.random() * (max - min) + min);

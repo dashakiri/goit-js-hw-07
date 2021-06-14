@@ -26,10 +26,11 @@ const images = [
 
 const ulRef = document.querySelector('#gallery');
 
-const makeGallery = (array) => {
-  array.forEach(element => {
+function makeGallery(array) {
+  array.map(element => {
     ulRef.insertAdjacentHTML('afterbegin', `<li class='gallery-item'> <img src="${element['url']}", alt="${element['alt']}" width=320px /></li>`);
   });
+
   return;
 };
 

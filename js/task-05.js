@@ -12,11 +12,18 @@ nameInput.addEventListener('input', onInputChange);
 nameInput.addEventListener('blur', onInputBlur);
 
 function onInputChange(event) {
-    nameOutputSpan.textContent = event.currentTarget.value;      
+    const inputString = event.currentTarget.value;
+    nameOutputSpan.textContent = inputString.trim();
+    
+    if (nameOutputSpan.textContent.length <= 0) {
+       nameOutputSpan.textContent = 'незнакомец';     
+    };
+
+    return;
 }
 
 function onInputBlur() {
 if (nameOutputSpan.textContent === '') {
        nameOutputSpan.textContent = 'незнакомец';     
-    }
+    }; 
 }
