@@ -27,15 +27,10 @@ const images = [
 const ulRef = document.querySelector('#gallery');
 
 function makeGallery(array) {
-  array.map(element => {
-    ulRef.insertAdjacentHTML('afterbegin', `<li class='gallery-item'> <img src="${element['url']}", alt="${element['alt']}" width=320px /></li>`);
-  });
+  const ulEl = array.map(element => `<li class='gallery-item'><img src="${element['url']}", alt="${element['alt']}" width=320px /></li>`).join('');
+  ulRef.insertAdjacentHTML('afterbegin', ulEl);
 
   return;
 };
 
 makeGallery(images);
-
-
-
-

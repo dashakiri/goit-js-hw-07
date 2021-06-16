@@ -11,25 +11,17 @@ const ingredients = [
 
 const ulRef = document.querySelector('ul');
 
+createListItem(ingredients);
+
 function createListItem(array) {
-  array.map(element => {
+  const newElement = array.map(element => {
     const listItem = document.createElement('li');
     listItem.textContent = element;
-    ulRef.appendChild(listItem);
-  }).join('');
+    return listItem;
+  });
+
+  console.log(newElement)
+   ulRef.append(...newElement);
 
   return;
 }
-
-createListItem(ingredients);
-
-// const createListItem = (array) => {
-//   array.forEach(element => {
-//     const listItem = document.createElement('li');
-//     listItem.textContent = element;
-//     ulRef.appendChild(listItem);
-//   });
-//   return;
-// };
-
-// createListItem(ingredients);
